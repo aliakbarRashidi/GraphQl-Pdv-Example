@@ -1,0 +1,44 @@
+type Pdv {
+  id: ObjID!
+  id: ObjID!
+  tradingName: String!
+  ownerName: String!
+  document: String
+  coverageArea: [MultiPolygon]
+  address: Point
+  createdAt: Float!
+  updatedAt: Float!
+}
+
+extend type Query {
+  pdvs(lastCreatedAt: Float, limit: Int): [Pdv!]
+  pdv(id: ObjID!): Pdv
+}
+
+input CreatePdvInput {
+  idId: ObjID!
+  tradingName: String!
+  ownerName: String!
+  document: String
+  addressId: ObjID
+}
+
+input UpdatePdvInput {
+  idId: ObjID!
+  tradingName: String!
+  ownerName: String!
+  document: String
+  addressId: ObjID
+}
+
+extend type Mutation {
+  createPdv(input: CreatePdvInput!): Pdv
+  updatePdv(id: ObjID!, input: UpdatePdvInput!): Pdv
+  removePdv(id: ObjID!): Boolean
+}
+
+extend type Subscription {
+  pdvCreated: Pdv
+  pdvUpdated: Pdv
+  pdvRemoved: ObjID
+}

@@ -1,0 +1,8 @@
+type Pdv {
+  id: ObjID!
+  tradingName: String!
+  ownerName: String!
+  document: String
+  coverageArea: [MultiPolygon]
+  address: Point
+}
