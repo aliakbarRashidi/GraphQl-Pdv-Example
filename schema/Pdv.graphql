@@ -1,6 +1,5 @@
 type Pdv {
-  id: ObjID!
-  id: ObjID!
+  id: ObjID
   tradingName: String!
   ownerName: String!
   document: String
@@ -16,7 +15,7 @@ extend type Query {
 }
 
 input CreatePdvInput {
-  idId: ObjID!
+  idId: ObjID
   tradingName: String!
   ownerName: String!
   document: String
@@ -24,7 +23,7 @@ input CreatePdvInput {
 }
 
 input UpdatePdvInput {
-  idId: ObjID!
+  idId: ObjID
   tradingName: String!
   ownerName: String!
   document: String

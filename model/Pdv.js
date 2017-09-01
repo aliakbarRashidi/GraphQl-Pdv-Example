@@ -20,7 +20,7 @@ export default class Pdv {
   }
 
   id(pdv) {
-    return this.context.ObjID.findOneById(pdv.idId);
+    return this.findOneById(pdv.id);
   }
 
   coverageArea(pdv, args) {

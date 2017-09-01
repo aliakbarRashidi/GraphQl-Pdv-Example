@@ -1,5 +1,5 @@
 type Pdv {
-  id: ObjID!
+  id: ObjID
   tradingName: String!
   ownerName: String!
   document: String
