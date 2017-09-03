@@ -42,7 +42,7 @@ describe('Graph API - PDV', () => {
         done();
     });
 
-    it('returns the user args and greeting', done => {
+    it('returns the id and tradingName for all PDVs', done => {
         const query = `
             query Q {
                 pdvs{
@@ -58,17 +58,7 @@ describe('Graph API - PDV', () => {
             if (err) { 
                 return done(err); 
             }
-            console.log(`err: ${err}`);
-            console.log(`res: ${res}`);
-            expect(JSON.parse(res.text)).to.deep.equal({
-                data: {
-                user: {
-                    name: 'Alice',
-                    email: 'alice@domain.com',
-                    greeting: 'Hello Alice!'
-                }
-                }
-            });
+            assert.equal(JSON.parse(res.text)).length, 0);
             done();
         });
     });
