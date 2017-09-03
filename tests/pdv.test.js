@@ -34,7 +34,6 @@ describe('Graph API - PDV', () => {
     
     beforeEach(async () => {
         server = require('../index').default;
-        //setup();
     });
 
     afterEach((done) => {
